@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quizzard ShisTech 2026</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- ==================== -->
+    <!-- EXAM HEADER / HUD     -->
+    <!-- ==================== -->
+
+    <header id="examHeader" hidden>
+
+        <div>
+
+            <strong class="hud-title" id="displayExamTitle">
+                Round 1
+            </strong>
+
+            <span id="displayStudent"></span>
+
+        </div>
+
+
+        <div>
+
+            <strong class="topic">
+                Academia
+            </strong>
+
+        </div>
+
+
+        <!-- timer old location-->
+
+    </header>
+
+
+    <!-- ==================== -->
+    <!-- BRANDING              -->
+    <!-- ==================== -->
+
+    <div class="brand-header" id="brandHeader">
+
+        <h1 class="brand-title">
+            SHISTECH '26
+        </h1>
+
+        <div class="exam-status">
+
+            <span class="badge badge-strikes" id="strikeTracker">
+                STRIKES: 0 / 1
+            </span>
+
+            <span class="badge badge-timer" id="timer">
+                TIME: 30:00
+            </span>
+
+        </div>
+        
+        <div class="brand-logo">
+
+            <img
+                src="TECHTECHLOGOLOGO.png"
+                alt="SHISTECH Logo"
+            >
+
+        </div>
+
+        <div class="brand-subtitle">
+            Quizzard Portal
+        </div>
+
+    </div>
+
+
+    <!-- ==================== -->
+    <!-- RULES                 -->
+    <!-- ==================== -->
+
+    <div class="rules-panel" id="rulesPanel">
+
+        <h2>
+            RULES &amp; INSTRUCTIONS
+        </h2>
+
+        <ul class="rules-list">
+
+            <li>
+                Ensure a stable internet connection.
+            </li>
+
+            <li>
+                Referring to external sources, calculators, AI or utilizing other assistance is prohibited.
+            </li>
+
+            <li>
+                Do not switch tabs or minimize the browser, reload or close the page after starting.
+            </li>
+
+            <li>
+                Do not exit full-screen mode or turn off your camera or microphone during the event.
+            </li>
+
+            <li>
+                Doing any of the above will result in a direct disqualification.
+                Contact the Quizzard Event Manager on Discord to appeal.
+            </li>
+
+            <li>
+                All team members may open the portal on their devices and log in,
+                but only one member should submit the solutions.
+            </li>
+
+        </ul>
+
+
+        <button
+            class="btn btn-primary"
+            id="acknowledgeRulesBtn"
+            type="button"
+        >
+            ACKNOWLEDGE &amp; PROCEED
+        </button>
+
+    </div>
+
+
+    <!-- ==================== -->
+    <!-- MAIN CONTENT          -->
+    <!-- ==================== -->
+
+    <main class="container" id="mainContainer">
+
+
+        <!-- ==================== -->
+        <!-- DIVISION SELECTION   -->
+        <!-- ==================== -->
+
+        <section class="card" id="categoryPanel" hidden>
+
+            <h2>
+                Select Category
+            </h2>
+
+            <p>
+                Select your registered category below.
+            </p>
+
+            <div class="division-grid">
+
+                <button
+                    class="btn-division"
+                    id="juniorBtn"
+                    type="button"
+                >
+                    JUNIOR DIVISION
+                </button>
+
+                <button
+                    class="btn-division"
+                    id="seniorBtn"
+                    type="button"
+                >
+                    SENIOR DIVISION
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== -->
+        <!-- CANDIDATE DETAILS     -->
+        <!-- ==================== -->
+
+        <section class="card" id="studentPanel" hidden>
+
+            <h2>
+                AUTHENTICATION REQUIRED
+            </h2>
+
+            <p
+                class="selected-division"
+                id="selectedDivisionText"
+            ></p>
+
+            <p>
+                Switching tabs or leaving this window will result in a disqualification.
+                Ensure beforehand that you have a stable connection.
+                Contact the Quizzard Event Manager if you feel an accidental strike
+                has been recorded.
+
+                <strong>
+                    Only one attempt is permitted per Candidate ID.
+                </strong>
+            </p>
+
+
+            <form id="candidateForm">
+
+                <div class="form-group">
+
+                    <label for="studentName">
+                        Log In
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        name="studentName"
+                        required
+                        placeholder="enter full name as registered"
+                    >
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-danger"
+                        id="backBtn"
+                    >
+                        BACK
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-success"
+                        id="startBtn"
+                    >
+                        CONFIRM LOG IN
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- ==================== -->
+        <!-- PRE-EXAM SCREEN       -->
+        <!-- ==================== -->
+
+        <section class="card" id="preExamPanel" hidden>
+
+            <h2>
+                Log In Confirmed. <br>Do NOT continue to start until instructed.
+            </h2>
+
+            <p>
+                Reminder: Switching tabs or leaving this window will result in a disqualification.
+            </p>
+
+            <button
+                class="btn btn-success"
+                id="continueStartBtn"
+                type="button"
+            >
+                CONTINUE TO START
+            </button>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==================== -->
+    <!-- EXAM                  -->
+    <!-- ==================== -->
+
+    <div id="examFrameWrapper" hidden>
+
+        <iframe
+            id="quizFrame"
+            title="SHISTECH Exam"
+            src=""
+            allow="camera; microphone"
+        ></iframe>
+
+    </div>
+
+
+    <!-- ==================== -->
+    <!-- WARNING MODAL         -->
+    <!-- ==================== -->
+
+    <div
+        class="overlay"
+        id="warningModal"
+        hidden
+    >
+
+        <div class="modal termination-modal">
+
+            <h3 id="warningTitle">
+                TAB SWITCH DETECTED
+            </h3>
+
+            <p id="warningMessage">
+                Focus lost on secure window.
+                This incident has been recorded.
+            </p>
+
+            <button
+                class="btn btn-danger"
+                id="acknowledgeBtn"
+                type="button"
+            >
+                ACKNOWLEDGE &amp; RETURN
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== -->
+    <!-- SESSION TERMINATION   -->
+    <!-- ==================== -->
+
+    <div id="terminationScreen" hidden>
+
+        <h2>
+            Exam Terminated
+        </h2>
+
+        <p>
+            Your session has been terminated due to time running out or due to a violation of the rules.
+            <br>
+            Contact the Quizzard Event Manager on Discord for queries.
+        </p>
+
+    </div>
+
+
+    <!-- ==================== -->
+    <!-- js linkeys         -->
+    <!-- ==================== -->
+
+    <script src="app.js"></script>
+    <script src="proctor.js"></script>
+
+</body>
+
+</html>
