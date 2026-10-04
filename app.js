@@ -59,8 +59,8 @@ const warningModal =
 // ====================
 
 const forms = {
-    junior: "https://docs.google.com/forms/d/e/1FAIpQLSdBpFUnqAc4Rrlggj191J7yfjKurot6ki_f3lLkv-mdgCXz6A/viewform?usp=dialog",
-    senior: "https://forms.gle/yBnJ1mKbd7B9rzZG6"
+    junior: "https://docs.google.com/forms/d/e/1FAIpQLSdgZ2OlGw_XYCtY0e_TbmrrbdojBeKUzh8dH_BBxOj4abJXLA/viewform?usp=header",
+    senior: "https://docs.google.com/forms/d/e/1FAIpQLSfUmtjt6uD3l6BHe-5RchveoQMmaqoeBcOd2aGKSOPPkoNiWw/viewform?usp=publish-editor"
 };
 
 
@@ -80,7 +80,7 @@ let rulesAcknowledged = false; //prevent user from accessing forms w/o acknowled
 // TIMER STUFF
 // ====================
 
-let totalTimeMin = 30; // CHANGE TIME TOTAL HERE
+let totalTimeMin = 45; // CHANGE TIME TOTAL HERE
 
 const t = document.getElementById("timer");
 
@@ -99,7 +99,7 @@ function startTimer(totalTimeMin) {
 
     function updateTimer() {
 
-        const timeRemainingMs = examEndTime - Date.now();
+        const timeRemainingMs = examEndTime - Date.now(); //dumb but fuckwatd
         const timeRemainingSec = Math.max(
             0,
             Math.ceil(timeRemainingMs / 1000)
@@ -122,7 +122,7 @@ function startTimer(totalTimeMin) {
             terminate();
         }
     }
-    // Show 30:00 immediately
+    // Show tim immediately
     updateTimer();
 
     // Update every second
