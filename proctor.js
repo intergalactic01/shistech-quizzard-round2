@@ -57,9 +57,9 @@ function registerStrike(reason) {
         "A violation of the exam rules was detected. Your session has been terminated. Contact the Quizzard Event Manager on Discord to appeal.";
 
     acknowledgeBtn.disabled = true;
-    acknowledgeBtn.textContent = "END EXAM (59)";
+    acknowledgeBtn.textContent = "END EXAM (10)";
 
-    let countdown = 59;
+    let countdown = 10;
 
     const terminationCountdown = setInterval(() => {
 

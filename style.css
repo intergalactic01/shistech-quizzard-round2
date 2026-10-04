@@ -84,10 +84,14 @@ h1, h2, h3 {
 
 .badge-strikes {
     font-weight: 700;
+    font-size: 1.3rem;
+    padding: 10px 16px;
 }
 
 .badge-timer {
     font-weight: 700;
+    font-size: 1.3rem;
+    padding: 10px 16px;
 }
 
 
@@ -108,9 +112,14 @@ h1, h2, h3 {
     padding: 40px 20px 30px;
 }
 .brand-header .exam-status {
-    position: absolute;
+    position: fixed;
     top: 20px;
+    left: 25px;
     right: 25px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+    pointer-events: none;
 }
 
 .brand-title {
@@ -447,7 +456,7 @@ h1, h2, h3 {
     width: 100%;
     height: calc(100vh - 70px);
 
-    padding: 20px 30px;
+    padding-top: 80px;
 
     display: flex;
     justify-content: center;
